@@ -4,6 +4,14 @@
 package com.kartdroid;
 
 import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.subjects.Subject;
+
+import org.reactivestreams.Processor;
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 public class App {
     public Flowable<String> getGreeting() {
@@ -12,5 +20,13 @@ public class App {
 
     public static void main(String[] args) {
         new App().getGreeting().subscribe(System.out::println).dispose();
+        Observable observable;
+        Observer observer;
+        Subject subject;
+
+        Subscriber subscriber;
+        Publisher publisher;
+        Subscription subscription;
+        Processor processor;
     }
 }
