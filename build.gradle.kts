@@ -6,6 +6,8 @@
  * User Manual available at https://docs.gradle.org/6.5/userguide/tutorial_java_projects.html
  */
 
+version = "1.0"
+
 plugins {
     // Apply the java plugin to add support for Java
     java
