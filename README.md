@@ -47,7 +47,7 @@ gradle -version
 #Welcome to Gradle 6.5!
 ```
 
-- Setting Up `gradle wraller`
+- Setting Up `gradle wrapper`
 
 ```bash
 #Karthicks-MBP:rxjava-sample karthickc$ gradle wrapper

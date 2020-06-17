@@ -3,12 +3,14 @@
  */
 package com.kartdroid;
 
+import io.reactivex.rxjava3.core.Flowable;
+
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
+    public Flowable<String> getGreeting() {
+        return Flowable.just("Hello world.");
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        new App().getGreeting().subscribe(System.out::println).dispose();
     }
 }

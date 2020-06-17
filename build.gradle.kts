@@ -26,6 +26,9 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:29.0-jre")
 
+    // This dependency is used by the application for ReactiveX Programming.
+    implementation("io.reactivex.rxjava3:rxjava:3.0.4")
+
     // Use JUnit Jupiter API for testing.
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
 
