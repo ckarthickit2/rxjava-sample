@@ -80,6 +80,7 @@ RxJava 3 features several base classes you can discover operators on:
 - [Intro to RXJava][froussios_intro_to_rxjava] by Froussios 
 - [Rxjava Ninja][rxjava_ninja] by Tompee
 - [ReactiveX Contract][reactivex_contract]
+- [RXWorkshop: Introduction][rx_workshop_intro]
 ---
 [reactivex_intro]: https://reactivex.io/intro.html
 [reactivex_contract]: http://reactivex.io/documentation/contract.html
@@ -92,3 +93,4 @@ RxJava 3 features several base classes you can discover operators on:
 [rxjava_basic_flow]: ./art/rxjava-basics-flow.png
 [froussios_intro_to_rxjava]: https://github.com/Froussios/Intro-To-RxJava
 [rxjava_ninja]: https://medium.com/tompee/rxjava-ninja-introduction-to-reactive-programming-4b1e27b20576
+[rx_workshop_intro]: https://channel9.msdn.com/Series/Rx-Workshop/Rx-Workshop-Introduction
