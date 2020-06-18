@@ -3,30 +3,26 @@
  */
 package com.kartdroid;
 
+import com.kartdroid.ch1.Ch1ObserveDemo;
+import com.kartdroid.ch2.Ch2ObserverAdvancedDemo;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.core.Observer;
-import io.reactivex.rxjava3.subjects.Subject;
-
-import org.reactivestreams.Processor;
-import org.reactivestreams.Publisher;
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
+import io.reactivex.rxjava3.plugins.RxJavaPlugins;
 
 public class App {
-    public Flowable<String> getGreeting() {
-        return Flowable.just("Hello world.");
+    public Flowable<String> getGreetingFlow() {
+        return Flowable.just("Hello world.", "We are gonna learn RxJava");
     }
 
     public static void main(String[] args) {
-        new App().getGreeting().subscribe(System.out::println).dispose();
-        Observable observable;
-        Observer observer;
-        Subject subject;
-
-        Subscriber subscriber;
-        Publisher publisher;
-        Subscription subscription;
-        Processor processor;
+        RxJavaPlugins.setErrorHandler(e -> {
+            System.out.println("Uncaught Exception : " + e);
+        });
+        RxJavaPlugins.lockdown();
+        new App().getGreetingFlow().subscribe(System.out::println).dispose();
+        Observable.fromArray(
+                new Ch1ObserveDemo(),
+                new Ch2ObserverAdvancedDemo()
+        ).doOnNext(Runnable::run).subscribe();
     }
 }
