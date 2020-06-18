@@ -79,8 +79,10 @@ RxJava 3 features several base classes you can discover operators on:
 - Anatomy of RxJava is explained @[Mindorks RxJava Anatomy Blog][mindorks_rxjava_anatomy]
 - [Intro to RXJava][froussios_intro_to_rxjava] by Froussios 
 - [Rxjava Ninja][rxjava_ninja] by Tompee
+- [ReactiveX Contract][reactivex_contract]
 ---
 [reactivex_intro]: https://reactivex.io/intro.html
+[reactivex_contract]: http://reactivex.io/documentation/contract.html
 [reactive_streams]: http://www.reactive-streams.org/
 [reactive_streams_jvm]: https://github.com/reactive-streams/reactive-streams-jvm
 [mindorks_rxjava_anatomy]: https://blog.mindorks.com/rxjava-anatomy-what-is-rxjava-how-rxjava-is-designed-and-how-rxjava-works-d357b3aca586
