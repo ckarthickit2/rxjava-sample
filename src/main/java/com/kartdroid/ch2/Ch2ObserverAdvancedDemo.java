@@ -97,6 +97,7 @@ public class Ch2ObserverAdvancedDemo implements Runnable {
         }).subscribe(item -> {
             System.out.println("Observer execution context: " + Thread.currentThread().getName());
         });
+        System.out.println("Subscribed Context: " + Thread.currentThread().getName());
     }
 
     private static Observer<String> loggingObserver() {
