@@ -5,6 +5,7 @@ package com.kartdroid;
 
 import com.kartdroid.ch1.Ch1ObserveDemo;
 import com.kartdroid.ch2.Ch2ObserverAdvancedDemo;
+import com.kartdroid.ch3.Ch3OperatorsDemo;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.plugins.RxJavaPlugins;
@@ -22,7 +23,8 @@ public class App {
         new App().getGreetingFlow().subscribe(System.out::println).dispose();
         Observable.fromArray(
                 new Ch1ObserveDemo(),
-                new Ch2ObserverAdvancedDemo()
+                new Ch2ObserverAdvancedDemo(),
+                new Ch3OperatorsDemo()
         ).doOnNext(Runnable::run).subscribe();
     }
 }

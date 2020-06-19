@@ -63,6 +63,53 @@ RxJava 3 features several base classes you can discover operators on:
 
 >To avoid name clash, the RxJava 1 `rx.Subscription` has been renamed into `io.reactivex.Disposable` in RxJava 2.
 
+
+### Terminologies
+
+- **Assembly Time** 
+    - Involves **preparation of data-flows** by applying various intermediate **operators**.
+    - Data is not flowing yet.
+    - No "side effects" are happening.
+    
+      ```javascript
+          Flowable<Integer> flow = Flowable.range(1, 5)
+            .map(v -> v * v)
+            .filter(v -> v % 3 == 0)
+            ;
+      ```
+- **Subscription Time**
+  - temporary state when `subscribe()` is called on an Observable.
+  - chain of processing steps are established internally.
+  - **subscription "side effects"** are triggered (`doOnSubscribe`)
+  
+      ```javascript
+          flow.subscribe(System.out::println)
+      ```
+- **Runtime**
+  - source is actually emitting items.
+  
+      ```javascript
+          Observable.create(emitter -> {
+               while (!emitter.isDisposed()) {
+                   long time = System.currentTimeMillis();
+                   emitter.onNext(time);
+                   if (time % 2 != 0) {
+                       emitter.onError(new IllegalStateException("Odd millisecond!"));
+                       break;
+                   }
+               }
+          })
+          .subscribe(System.out::println, Throwable::printStackTrace);
+      ```
+      > The body of the above example executes at this stage.
+- **Data Flow** 
+    Consists of **a source** , zero or more **intermediate steps**, followed by a data consumer (or) combinator.
+  - `Upstream` -  Looking to the left/up towards the source is called upstream.
+  - `Downstream` -  Looking to the right/down towards the consumer is called downstream.
+
+- **Parallel Processing** 
+  - Practically, parallelism in RxJava means **running independent flows** and **merging their results back into a single flow**.
+  
 ### Cold vs Hot Publishers
 
 |         Cold Publishers                                |                         Hot Publishers                                           |
@@ -80,10 +127,12 @@ RxJava 3 features several base classes you can discover operators on:
 - [Intro to RXJava][froussios_intro_to_rxjava] by Froussios 
 - [Rxjava Ninja][rxjava_ninja] by Tompee
 - [ReactiveX Contract][reactivex_contract]
+- [ReactiveX Operators][reactivex_operators]
 - [RXWorkshop: Introduction][rx_workshop_intro]
 ---
 [reactivex_intro]: https://reactivex.io/intro.html
 [reactivex_contract]: http://reactivex.io/documentation/contract.html
+[reactivex_operators]: http://reactivex.io/documentation/operators.html
 [reactive_streams]: http://www.reactive-streams.org/
 [reactive_streams_jvm]: https://github.com/reactive-streams/reactive-streams-jvm
 [mindorks_rxjava_anatomy]: https://blog.mindorks.com/rxjava-anatomy-what-is-rxjava-how-rxjava-is-designed-and-how-rxjava-works-d357b3aca586

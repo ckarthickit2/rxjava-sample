@@ -1,10 +1,12 @@
 package com.kartdroid.ch2;
 
 import io.reactivex.rxjava3.annotations.NonNull;
-import io.reactivex.rxjava3.core.*;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableEmitter;
+import io.reactivex.rxjava3.core.ObservableOnSubscribe;
+import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.exceptions.UndeliverableException;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class Ch2ObserverAdvancedDemo implements Runnable {
 

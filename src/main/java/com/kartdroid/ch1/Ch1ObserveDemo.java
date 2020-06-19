@@ -43,5 +43,22 @@ public class Ch1ObserveDemo implements Runnable {
             }
         });
         System.out.println("=======end==========");
+//        Observable something = Observable.fromRunnable(tempRunnable::run);
+//        something.subscribe();
+//        something.subscribe();
+//        something.subscribe();
     }
+
+//    interface SomeSAMInterface {
+//        void run();
+//    }
+//    private static SomeSAMInterface tempRunnable = new SomeSAMInterface() {
+//        private int incrementCounter = 0;
+//        @Override
+//        public void run() {
+//            System.out.println("counter = " + incrementCounter++);
+//        }
+//    };
 }
+
+
