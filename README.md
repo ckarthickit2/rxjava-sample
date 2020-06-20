@@ -64,7 +64,7 @@ RxJava 3 features several base classes you can discover operators on:
 >To avoid name clash, the RxJava 1 `rx.Subscription` has been renamed into `io.reactivex.Disposable` in RxJava 2.
 
 
-### Terminologies
+## Terminologies
 
 - **Assembly Time** 
     - Involves **preparation of data-flows** by applying various intermediate **operators**.
@@ -110,7 +110,35 @@ RxJava 3 features several base classes you can discover operators on:
 - **Parallel Processing** 
   - Practically, parallelism in RxJava means **running independent flows** and **merging their results back into a single flow**.
   
-### Cold vs Hot Publishers
+## Operators by Category  
+
+1. **Creating Observables** - *Operators that originate new Observables.*
+    - Create, Defer, Empty / Never / Throw, From, Interval, Just etc.,
+2. **Transforming Observables** - *Operators that transform items that are emitted by an Observable.*
+    - Buffer, FlatMap, GroupBy, Map, Scan, Window.
+3. **Filtering Observables** - *Operators that transform items that are emitted by an Observable.*
+    - Debounce , Distinct, ElementAt, Filter, First, Last, Skip, SkipLast, Take, TakeLast, IgnoreElements, Sample.
+4. **Combining Observables** - *Operators that work with multiple source Observables to create a single Observable.*
+    - And / Then / When, Join, Merge, Switch, Zip
+5. **Error Handling Operators**  - *Operators that help to recover from error notifications from an Observable.*
+    - Catch, Retry
+6. **Observable Utility Operators** - *A toolbox of useful Operators for working with Observables.*
+    - Delay, TimeInterval, Timeout, Timestamp, Subscribe, SubscribeOn, ObserveOn etc., 
+7. **Conditional and Boolean Operators** - *Operators that evaluate one or more Observables or items emitted by Observables.*
+    - All, Amb, Contains, DefaultIfEmpty, SkipUntil, SkipWhile, TakeUntil, TakeWhile
+8. **Mathematical and Aggregate Operators** - *Operators that operate on the entire sequence of items emitted by an Observable.*
+    - Average, Concat, Count, Max, Min, Reduce, Sum
+9. **Backpressure Operators** - *strategies for coping with Observables that produce items more rapidly than their observers consume them.*
+    - `Flowable`
+10. **Connectable Observable Operators** - *Specialty Observables that have more precisely-controlled subscription dynamics.*
+    - Connect, Publish, RefCount, Replay
+11. **Operators to convert Observables** - *convert an Observable into another object or data structure.*
+    - `To` 
+ 
+### 
+
+  
+## Cold vs Hot Publishers
 
 |         Cold Publishers                                |                         Hot Publishers                                           |
 |        -----------------                               |                        -----------------                                         |
@@ -121,7 +149,7 @@ RxJava 3 features several base classes you can discover operators on:
 | **data-driven** is cold                                | **event-driven** is hot                                                            |
 | **Flowable** and **Observable** are generally cold     | **Subjects** are one way to handle hot observables                               |  
 
-### References
+## References
 
 - Anatomy of RxJava is explained @[Mindorks RxJava Anatomy Blog][mindorks_rxjava_anatomy]
 - [Intro to RXJava][froussios_intro_to_rxjava] by Froussios 
