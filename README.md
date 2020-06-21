@@ -55,8 +55,9 @@
 
 RxJava 3 features several base classes you can discover operators on:
 
+- [`io.reactivex.rxjava3.core.ObservableSource`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/ObservableSource.html): Represents a basic, non-backpressured [Observable][rxjava_obervable] **source** base interface, consumable via an Observer.
 - [`io.reactivex.rxjava3.core.Flowable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Flowable.html): 0..N flows, **supporting Reactive-Streams and backpressure**
-- [`io.reactivex.rxjava3.core.Observable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Observable.html): 0..N flows, **no backpressure**,
+- [`io.reactivex.rxjava3.core.Observable`][rxjava_obervable]: 0..N flows, **no backpressure**,
 - [`io.reactivex.rxjava3.core.Single`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Single.html): a flow of exactly 1 item or an error,
 - [`io.reactivex.rxjava3.core.Completable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Completable.html): a flow without items but only a completion or error signal,
 - [`io.reactivex.rxjava3.core.Maybe`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Maybe.html): a flow with no items, exactly one item or an error.
@@ -157,6 +158,8 @@ RxJava 3 features several base classes you can discover operators on:
 - [ReactiveX Contract][reactivex_contract]
 - [ReactiveX Operators][reactivex_operators]
 - [RXWorkshop: Introduction][rx_workshop_intro]
+- [Stackoverflow: Observable vs Flowable][observable_vs_flowable]
+- [RxJava Wiki on Creational Operators][rxjava_wiki_operators_create]
 ---
 [reactivex_intro]: https://reactivex.io/intro.html
 [reactivex_contract]: http://reactivex.io/documentation/contract.html
@@ -168,6 +171,9 @@ RxJava 3 features several base classes you can discover operators on:
 [observer_pattern]: https://en.wikipedia.org/wiki/Observer_pattern
 [gradle_init_java_app]: https://docs.gradle.org/current/userguide/build_init_plugin.html#sec:java_application
 [rxjava_basic_flow]: ./art/rxjava-basics-flow.png
+[rxjava_obervable]: http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Observable.html
+[rxjava_wiki_operators_create]: https://github.com/ReactiveX/RxJava/wiki/Creating-Observables
 [froussios_intro_to_rxjava]: https://github.com/Froussios/Intro-To-RxJava
 [rxjava_ninja]: https://medium.com/tompee/rxjava-ninja-introduction-to-reactive-programming-4b1e27b20576
 [rx_workshop_intro]: https://channel9.msdn.com/Series/Rx-Workshop/Rx-Workshop-Introduction
+[observable_vs_flowable]: https://stackoverflow.com/questions/40323307/observable-vs-flowable-rxjava2

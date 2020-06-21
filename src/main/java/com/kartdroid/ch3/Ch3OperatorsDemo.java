@@ -19,7 +19,7 @@ public class Ch3OperatorsDemo implements Runnable {
 
     private void observableCreationOperatorsDemo() {
         System.out.println("=======observableCreationOperatorsDemo==========");
-        Observable.interval(1, TimeUnit.SECONDS)  //The Operator
+        Observable.interval(500, TimeUnit.MILLISECONDS)  //The Operator
                 .take(5)  //Take Operator takes only 1st 5 from upstream
                 .blockingForEach(System.out::println);
     }
