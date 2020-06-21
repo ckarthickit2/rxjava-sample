@@ -23,10 +23,11 @@ public class Ch3OperatorsDemo implements Runnable {
                 .take(5)  //Take Operator takes only 1st 5 from upstream
                 .blockingForEach(System.out::println);
     }
+
     private void mapOperatorDemo() {
         System.out.println("=======mapOperatorDemo==========");
-        Observable.range(1,10)
-                .map( value -> String.format("%d -> %d",value , value * 10))  //The Operator
+        Observable.range(1, 10)
+                .map(value -> String.format("%d -> %d", value, value * 10))  //The Operator
                 .subscribe(System.out::println);
     }
 }

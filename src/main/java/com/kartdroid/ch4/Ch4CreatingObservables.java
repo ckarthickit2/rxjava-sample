@@ -92,7 +92,7 @@ public class Ch4CreatingObservables implements Runnable {
     }
 
 
-    private void  emptyNeverErrorDemo() {
+    private void emptyNeverErrorDemo() {
         System.out.println("=======emptyDemo==========");
         Observable<String> empty = Observable.empty();
         empty.subscribe(
@@ -156,12 +156,19 @@ public class Ch4CreatingObservables implements Runnable {
         generatorObservable.subscribe(System.out::println);
     }
 
+    /**
+     * After the specified time, this reactive source signals a single 0L (then completes for Flowable and Observable).
+     */
     private void timerDemo() {
         System.out.println("=======timerDemo==========");
         Observable<Long> fireAfterSometime = Observable.timer(1, TimeUnit.SECONDS);
-        fireAfterSometime.blockingSubscribe(value -> System.out.println("Noodles is ready!"));
+        fireAfterSometime.blockingSubscribe(value_0 -> System.out.println("Noodles is ready!"));
     }
 
+    /**
+     * Periodically generates an infinite, ever increasing numbers (of type Long).
+     * The intervalRange variant generates a limited amount of such numbers.
+     */
     private void intervalDemo() {
         System.out.println("=======intervalDemo==========");
         Observable<Long> tickTock = Observable.interval(500, TimeUnit.MILLISECONDS);

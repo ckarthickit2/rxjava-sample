@@ -1,5 +1,6 @@
 # RxJAVA Tutorial
 
+![RxJava Sample Build Status](https://github.com/ckarthickit2/rxjava-sample/workflows/rxjava-sample-workflow/badge.svg)
 
 ## What is ReactiveX 
 
