@@ -144,7 +144,7 @@ public class CreatingObservables implements Runnable {
         System.out.println("=======generatorDemo==========");
         int startValue = 1;
         final int incrementValue = 3;
-        Observable<Integer> generatorObservable = Observable.generate(() -> startValue, (accumulator, emitter) -> {
+        Observable<Integer> generatorObservable = Observable.generate(() -> startValue, (/*state*/accumulator, /*Emitter<T>*/emitter) -> {
             int nextValue = accumulator + incrementValue;
             if (nextValue <= 5 * incrementValue) {
                 emitter.onNext(nextValue);

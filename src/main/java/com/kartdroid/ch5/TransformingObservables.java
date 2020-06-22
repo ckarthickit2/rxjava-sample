@@ -1,9 +1,11 @@
 package com.kartdroid.ch5;
 
 import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.internal.functions.Functions;
 import io.reactivex.rxjava3.internal.util.ArrayListSupplier;
+import io.reactivex.rxjava3.observables.GroupedObservable;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -17,6 +19,7 @@ public class TransformingObservables implements Runnable {
         castDemo();
         concatMapDemo();
         flatMapDemo();
+        groupByDemo();
         System.out.println("=======end==========");
     }
 
@@ -96,5 +99,28 @@ public class TransformingObservables implements Runnable {
             return Observable.intervalRange(/*start*/1L,/*count*/3L, /*initialDelay*/0L, /*period*/1, TimeUnit.SECONDS)
                     .map(mappedValue -> upstreamValue + ": " + mappedValue);
         }).blockingSubscribe(System.out::println);
+    }
+
+
+    /**
+     * Groups the items emitted by a reactive source according to a specified criterion,
+     * and emits these grouped items as a GroupedObservable or GroupedFlowable.
+     * <p>
+     * keySelector => a function that extracts the key for each item
+     * valueSelector => a function that extracts the return element for each item
+     */
+    private void groupByDemo() {
+        System.out.println("=======groupByDemo==========");
+        Observable<String> animals = Observable.just(
+                "Tiger", "Elephant", "Cat", "Chameleon", "Frog", "Fish", "Turtle", "Flamingo");
+        Observable<GroupedObservable<Character, String>> groupedObservableObservable = animals.groupBy(
+                /*keySelector*/(animal) -> animal.charAt(0),  //First Character is the Key
+                /*valueSelector*/(animal) -> animal.toUpperCase()); //The Groups are formed with all animal names turned into their uppercase
+        Observable<List<String>> listObservable = groupedObservableObservable
+                .concatMapSingle((GroupedObservable<Character, String> groupedObservable) -> {
+                    Single<List<String>> single = groupedObservable.toList();
+                    return single;
+                });
+        listObservable.subscribe(System.out::println);
     }
 }
