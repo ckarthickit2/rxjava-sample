@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * http://reactivex.io/documentation/contract.html => The Observable Contract.
  */
-public class Ch1ObserveDemo implements Runnable {
+public class ObserveDemo implements Runnable {
     @Override
     public void run() {
         System.out.println("\n=======Ch1ObserveDemo==========");

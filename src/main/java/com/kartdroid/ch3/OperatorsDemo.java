@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Operators accept input, manipulate it and  produce an output.
  */
-public class Ch3OperatorsDemo implements Runnable {
+public class OperatorsDemo implements Runnable {
     @Override
     public void run() {
         System.out.println("\n=======Ch3OperatorsDemo==========");

@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.TimeUnit;
 
-public class Ch4CreatingObservables implements Runnable {
+public class CreatingObservables implements Runnable {
     @Override
     public void run() {
         System.out.println("\n=======Ch4CreatingObservables==========");

@@ -8,7 +8,7 @@ import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.exceptions.UndeliverableException;
 
-public class Ch2ObserverAdvancedDemo implements Runnable {
+public class ObserverAdvancedDemo implements Runnable {
 
 
     @Override

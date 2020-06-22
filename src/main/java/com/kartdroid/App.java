@@ -3,10 +3,10 @@
  */
 package com.kartdroid;
 
-import com.kartdroid.ch1.Ch1ObserveDemo;
-import com.kartdroid.ch2.Ch2ObserverAdvancedDemo;
-import com.kartdroid.ch3.Ch3OperatorsDemo;
-import com.kartdroid.ch4.Ch4CreatingObservables;
+import com.kartdroid.ch1.ObserveDemo;
+import com.kartdroid.ch2.ObserverAdvancedDemo;
+import com.kartdroid.ch3.OperatorsDemo;
+import com.kartdroid.ch4.CreatingObservables;
 import com.kartdroid.ch5.TransformingObservables;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.Observable;
@@ -24,10 +24,10 @@ public class App {
         RxJavaPlugins.lockdown();
         new App().getGreetingFlow().subscribe(System.out::println).dispose();
         Observable.fromArray(
-                new Ch1ObserveDemo(),
-                new Ch2ObserverAdvancedDemo(),
-                new Ch3OperatorsDemo(),
-                new Ch4CreatingObservables(),
+                new ObserveDemo(),
+                new ObserverAdvancedDemo(),
+                new OperatorsDemo(),
+                new CreatingObservables(),
                 new TransformingObservables()
         ).doOnNext(Runnable::run).subscribe();
     }
